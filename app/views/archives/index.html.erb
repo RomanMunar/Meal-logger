@@ -1,0 +1,20 @@
+<div class="column mt-6 js-centered">
+  <div class="column is-one-quarter">
+    <% @entries.each do | day, entries | %>
+    <h3 class="is-size-4 has-text-weight-bold mb-4 has-text-centered">Entries for <%= day %></h3>
+
+    <% entries.each do |entry| %>
+    <%= link_to entry_path(entry) do %>
+    <div class="card">
+      <div class="card-content">
+        <strong>
+          <%= entry.meal_type%><br>
+        </strong>
+        <%= entry.calories%>g calories, <%= entry.fats%>g fats, <%= entry.carbohydrates%>g carbs, <%= entry.proteins%>g proteins,
+      </div>
+    </div>
+    <%end%>
+    <%end%>
+    <%end%>
+  </div>
+</div>
