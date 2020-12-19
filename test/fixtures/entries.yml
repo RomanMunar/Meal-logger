@@ -5,11 +5,11 @@ one:
   calories: 1
   proteins: 1
   fats: 1
-  carbodhydrates: 1
+  carbohydrates: 1
 
 two:
   meal_type: MyString
   calories: 1
   proteins: 1
   fats: 1
-  carbodhydrates: 1
+  carbohydrates: 1

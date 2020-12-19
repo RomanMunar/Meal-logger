@@ -15,7 +15,7 @@ class EntriesTest < ApplicationSystemTestCase
     click_on "New Entry"
 
     fill_in "Calories", with: @entry.calories
-    fill_in "Carbodhydrates", with: @entry.carbodhydrates
+    fill_in "Carbohydrates", with: @entry.carbohydrates
     fill_in "Fats", with: @entry.fats
     fill_in "Meal type", with: @entry.meal_type
     fill_in "Proteins", with: @entry.proteins
@@ -30,7 +30,7 @@ class EntriesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Calories", with: @entry.calories
-    fill_in "Carbodhydrates", with: @entry.carbodhydrates
+    fill_in "Carbohydrates", with: @entry.carbohydrates
     fill_in "Fats", with: @entry.fats
     fill_in "Meal type", with: @entry.meal_type
     fill_in "Proteins", with: @entry.proteins

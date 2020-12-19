@@ -4,7 +4,7 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+    @entries = Entry.all.where("created_at >= ?", Date.today)
   end
 
   # GET /entries/1
@@ -69,6 +69,6 @@ class EntriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def entry_params
-      params.require(:entry).permit(:meal_type, :calories, :proteins, :fats, :carbodhydrates)
+      params.require(:entry).permit(:meal_type, :calories, :proteins, :fats, :carbohydrates)
     end
 end
