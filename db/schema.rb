@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_12_19_015205) do
     t.integer "calories"
     t.integer "proteins"
     t.integer "fats"
-    t.integer "carbodhydrates"
+    t.integer "carbohydrates"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
