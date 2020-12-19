@@ -1,7 +1,10 @@
 <% content_for :title do %>
-Foodlog &ndash;on <%= DateTime.now %>
+Foodlog &ndash;on <%= DateTime.now.to_s(:nice_date) %>
 <% end %>
 
+<div class="columns is-centered">
+  <%= link_to 'View all Entries', archives_index_path, class: "button is-link"%>
+</div>
 <div class="column mt-6 js-centered">
   <% @entries.each do |entry| %>
   <div class="column is-one-quarter">
@@ -14,16 +17,16 @@ Foodlog &ndash;on <%= DateTime.now %>
       <div class="card-content">
         <div class="content">
           <div class="has-text-weight-bold">
-            <%= entry.calories %>
+            <%= entry.calories %> g calories
           </div>
           <div class="has-text-weight-bold">
-            <%= entry.proteins %>
+            <%= entry.proteins %> g proteins
           </div>
           <div class="has-text-weight-bold">
-            <%= entry.fats %>
+            <%= entry.fats %> g fats
           </div>
           <div class="has-text-weight-bold">
-            <%= entry.carbodhydrates %>
+            <%= entry.carbohydrates %> g carbohydrates
           </div>
         </div>
       </div>
