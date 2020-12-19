@@ -1,35 +1,38 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title do %>
+Foodlog &ndash;on <%= DateTime.now %>
+<% end %>
 
-<h1>Entries</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Meal type</th>
-      <th>Calories</th>
-      <th>Proteins</th>
-      <th>Fats</th>
-      <th>Carbodhydrates</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @entries.each do |entry| %>
-      <tr>
-        <td><%= entry.meal_type %></td>
-        <td><%= entry.calories %></td>
-        <td><%= entry.proteins %></td>
-        <td><%= entry.fats %></td>
-        <td><%= entry.carbodhydrates %></td>
-        <td><%= link_to 'Show', entry %></td>
-        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Entry', new_entry_path %>
+<div class="column mt-6 js-centered">
+  <% @entries.each do |entry| %>
+  <div class="column is-one-quarter">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-title">
+          <%= entry.meal_type %>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <div class="has-text-weight-bold">
+            <%= entry.calories %>
+          </div>
+          <div class="has-text-weight-bold">
+            <%= entry.proteins %>
+          </div>
+          <div class="has-text-weight-bold">
+            <%= entry.fats %>
+          </div>
+          <div class="has-text-weight-bold">
+            <%= entry.carbodhydrates %>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <%= link_to 'Show', entry, class: "card-footer-item"%>
+        <%= link_to 'Edit', edit_entry_path(entry), class: "card-footer-item"%>
+        <%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-footer-item"%>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
